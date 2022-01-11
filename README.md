@@ -2,14 +2,25 @@
 
 API to get information about football competitions, teams and players.
 
-### Technologies
+#### Technologies
 - Node.js
 - Express.js
 - GraphQL
 - Babel
 - Docker
 
-### Environment variables
+I decided to use this stack for a few reasons:
+- Express is easy to use and integrate with different libraries
+- Babel allows me to use modern JS features in node
+- Docker let me set a database in a few seconds and also let others run the app instantly
+
+#### Possible improvements
+- Add UTs with Jest
+- Use TypeScript
+- Use a more scalable framework like Nest.js
+- Set up CI/CD
+
+## Environment variables
 | Variable    | Description                                                | Default       |
 | ----------- | ---------------------------------------------------------- | ------------- |
 | NODE_ENV    | Set the environment configuration for the node application | 'development' |
