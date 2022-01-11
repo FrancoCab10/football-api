@@ -1,0 +1,16 @@
+query {
+  competition(code: "PL") {
+    id,
+    name,
+    code,
+    areaName,
+    teams {
+      id,
+      name,
+      tla,
+      areaName,
+      shortName,
+      email
+    }
+  }
+}

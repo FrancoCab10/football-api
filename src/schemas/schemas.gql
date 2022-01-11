@@ -1,0 +1,40 @@
+type Competition {
+  id: ID!
+  name: String
+  code: String
+  areaName: String,
+  teams: [Team]
+}
+
+type Team {
+  id: ID!
+  name: String
+  tla: String
+  shortName: String
+  areaName: String
+  email: String
+  competitions: [Competition]
+  players: [Player]
+}
+
+type Player {
+  id: ID!
+  name: String
+  position: String
+  dateOfBirth: String
+  countryOfBirth: String
+  nationality: String
+  team: Team
+}
+
+type Query {
+  competitions: [Competition],
+  competition(code: String!): Competition,
+  teams(search: String): [Team],
+  team(name: String!): Team,
+  players(competitionCode: String!, teamName: String): [Player]
+}
+
+type Mutation {
+  importCompetition(code: String): Competition
+}

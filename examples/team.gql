@@ -1,0 +1,18 @@
+query {
+  team(name: "Manchester United FC") {
+    id,
+    name,
+    tla,
+    areaName,
+    shortName,
+    email,
+    players {
+      id,
+      name,
+      position,
+      dateOfBirth,
+      countryOfBirth,
+      nationality
+    }
+  }
+}

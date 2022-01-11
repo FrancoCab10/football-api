@@ -1,0 +1,14 @@
+query {
+  players(competitionCode: "PL", teamName: "Man") {
+    id,
+    name,
+    position,
+    dateOfBirth,
+    countryOfBirth,
+    nationality,
+    team {
+      id,
+      name
+    }
+  }
+}

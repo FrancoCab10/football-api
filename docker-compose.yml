@@ -1,0 +1,26 @@
+version: "3.9"
+services:
+  db:
+    image: mongo:4.4.12-rc0-focal
+    ports:
+      - "27017:27017"
+    restart: always
+    volumes: [ ./data:/data/db ]
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: test
+  api:
+    build: ./
+    ports:
+      - "8000:8000"
+    links:
+      - db
+    environment:
+      NODE_ENV: production
+      PORT: 8000
+      FBD_API_KEY: your-api-key
+      DB_HOST: db
+      DB_PORT: 27017
+      DB_USER: root
+      DB_PASSWORD: test
+      DB_SCHEMA: football_db

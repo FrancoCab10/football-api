@@ -1,0 +1,16 @@
+query {
+  teams(search: "") {
+    id,
+    name,
+    tla,
+    areaName,
+    shortName,
+    email,
+    competitions {
+      id,
+      name,
+      code,
+      areaName,
+    }
+  }
+}
